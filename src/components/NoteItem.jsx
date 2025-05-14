@@ -1,4 +1,4 @@
-export default function NoteItem({ idea, img, colorClass }) {
+export default function NoteItem({ idea, img, colorClass, onDelete }) {
   return (
     <div>
       <div
@@ -6,9 +6,9 @@ export default function NoteItem({ idea, img, colorClass }) {
         className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow w-[270px] h-[140px] border border-[#E5E7EB]"
       >
         <div className={`h-5 w-full rounded-t-lg ${colorClass}`}></div>
-        <div className="p-4 flex flex-row justify-between">
-          <div>
-            <div className="flex flex-row items-center gap-32 justify-between">
+        <div className="p-4 flex flex-row justify-between w-full">
+          <div className="w-full">
+            <div className="flex items-center justify-between w-full">
               <h1 className="text-[12px] font-medium">{idea.title}</h1>
               <div className="flex flex-row gap-2">
                 <img
@@ -20,6 +20,7 @@ export default function NoteItem({ idea, img, colorClass }) {
                   src="/Trash.svg"
                   alt=""
                   className="hover:cursor-pointer hover:scale-110 transition-transform duration-200"
+                  onClick={() => onDelete(idea.id)}
                 />
               </div>
             </div>

@@ -1,13 +1,12 @@
 import { useState } from "react";
 
-function AddNote() {
+function AddNote({ onAdd }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTitle("");
-    setContent("");
+    onAdd(title, content);
   };
 
   return (

@@ -1,47 +1,6 @@
 import NoteItem from "./NoteItem";
 
-const KontenList = () => {
-  const contentIdeas = [
-    {
-      id: 1,
-      title: "Ide Konten",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-    },
-    {
-      id: 2,
-      title: "Ide Konten",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-    },
-    {
-      id: 3,
-      title: "Ide Konten",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-    },
-    {
-      id: 4,
-      title: "Ide Konten",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-    },
-  ];
-  const contentSave = [
-    {
-      id: 1,
-      title: "Ide Konten",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-    },
-    {
-      id: 2,
-      title: "Ide Konten",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-    },
-  ];
-
+const KontenList = ({ contentIdeas, contentSave, onDelete }) => {
   return (
     <div className="w-[80%] mx-auto p-6">
       <div className="flex flex-row items-center gap-5 mb-6">
@@ -51,7 +10,12 @@ const KontenList = () => {
 
       <div className=" flex flex-row justify-start gap-5">
         {contentIdeas.map((idea) => (
-          <NoteItem idea={idea} img="/Save.svg" colorClass="bg-[#0F7ECD]" />
+          <NoteItem
+            idea={idea}
+            img="/Save.svg"
+            colorClass="bg-[#0F7ECD]"
+            onDelete={onDelete}
+          />
         ))}
       </div>
       <div className="flex flex-row items-center gap-5 mb-6 mt-10">
