@@ -9,12 +9,14 @@ export default function Notes() {
       title: "Ide Konten",
       date: "~Selasa, 13 Mei 2025",
       tips: "Tips belajar React untuk pemula.",
+      isArchived: false,
     },
     {
       id: 2,
       title: "Ide Konten",
       date: "~Selasa, 13 Mei 2025",
       tips: "Tips belajar React untuk pemula.",
+      isArchived: false,
     },
   ]);
 
@@ -22,14 +24,17 @@ export default function Notes() {
     {
       id: 1,
       title: "Ide Konten",
+
       date: "~Selasa, 13 Mei 2025",
       tips: "Tips belajar React untuk pemula.",
+      isArchived: true,
     },
     {
       id: 2,
       title: "Ide Konten",
       date: "~Selasa, 13 Mei 2025",
       tips: "Tips belajar React untuk pemula.",
+      isArchived: true,
     },
   ]);
 
