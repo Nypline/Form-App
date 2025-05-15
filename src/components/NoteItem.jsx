@@ -1,4 +1,10 @@
-export default function NoteItem({ idea, img, colorClass, onDelete }) {
+export default function NoteItem({
+  idea,
+  img,
+  colorClass,
+  onDelete,
+  handleToggleArchive,
+}) {
   return (
     <div>
       <div
@@ -15,12 +21,15 @@ export default function NoteItem({ idea, img, colorClass, onDelete }) {
                   src={img}
                   alt=""
                   className="hover:cursor-pointer hover:scale-110 transition-transform duration-200"
+                  onClick={() => handleToggleArchive(idea.id)}
                 />
                 <img
                   src="/Trash.svg"
                   alt=""
                   className="hover:cursor-pointer hover:scale-110 transition-transform duration-200"
-                  onClick={() => onDelete(idea.id)}
+                  onClick={() => {
+                    onDelete(idea.id);
+                  }}
                 />
               </div>
             </div>

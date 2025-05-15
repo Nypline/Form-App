@@ -5,35 +5,24 @@ import { useState } from "react";
 export default function Notes() {
   const [contentIdeas, setContentIdeas] = useState([
     {
-      id: 1,
-      title: "Ide Konten",
+      id: "01",
+      title: "Hello",
       date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
+      tips: "false",
       isArchived: false,
     },
     {
-      id: 2,
-      title: "Ide Konten",
+      id: "02",
+      title: "Hello",
       date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
-      isArchived: false,
-    },
-  ]);
-
-  const [contentSave, setContentSave] = useState([
-    {
-      id: 1,
-      title: "Ide Konten",
-
-      date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
+      tips: "false",
       isArchived: true,
     },
     {
-      id: 2,
-      title: "Ide Konten",
+      id: "03cxa",
+      title: "Hello",
       date: "~Selasa, 13 Mei 2025",
-      tips: "Tips belajar React untuk pemula.",
+      tips: "false",
       isArchived: true,
     },
   ]);
@@ -44,6 +33,7 @@ export default function Notes() {
       title: title,
       date: "~Selasa, 13 Mei 2025",
       tips: content,
+      isArchived: false,
     };
     if (!title || !content) {
       alert("Please fill in all fields");
@@ -57,13 +47,23 @@ export default function Notes() {
     setContentIdeas(updatedNotes);
   };
 
+  const handleToggleArchive = (id) => {
+    const updatedIdeas = contentIdeas.map((idea) => {
+      if (idea.id === id) {
+        return { ...idea, isArchived: !idea.isArchived };
+      }
+      return idea;
+    });
+    setContentIdeas(updatedIdeas);
+  };
+
   return (
     <div className="flex flex-col gap-10">
       <AddNote onAdd={onAdd}></AddNote>
       <KontenList
         contentIdeas={contentIdeas}
-        contentSave={contentSave}
         onDelete={handleDeleteNote}
+        handleToggleArchive={handleToggleArchive}
       ></KontenList>
     </div>
   );
