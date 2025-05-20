@@ -7,6 +7,8 @@ function AddNote({ onAdd }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd(title, content);
+    setTitle("");
+    setContent("");
   };
 
   return (

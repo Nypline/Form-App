@@ -5,7 +5,7 @@ const KontenList = ({ contentIdeas, onDelete, handleToggleArchive }) => {
   const archivedIdeas = contentIdeas.filter((idea) => idea.isArchived);
 
   return (
-    <div className="w-[80%] mx-auto p-6 bg-pink-50 ">
+    <div className="w-[80%] mx-auto p-6  ">
       {activeIdeas.length > 0 && (
         <>
           <div className="flex flex-row items-center gap-5 mb-6">

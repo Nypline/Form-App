@@ -1,4 +1,4 @@
-export default function Navbar() {
+export default function Navbar({ handleChange, searchInput }) {
   return (
     <div className="py-5 flex flex-row justify-around items-center border-b border-[#E5E7EB]">
       <div className="flex flex-row">
@@ -9,6 +9,8 @@ export default function Navbar() {
           type="text"
           placeholder="🔍Search..."
           className="border border-[#E5E7EB] py-3 px-10 bg-[#F9FAFB] w-full rounded-lg"
+          onChange={handleChange}
+          value={searchInput}
         />
       </div>
     </div>

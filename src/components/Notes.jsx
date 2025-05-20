@@ -1,32 +1,7 @@
 import AddNote from "./AddNote";
 import KontenList from "./KontenList";
-import { useState } from "react";
 
-export default function Notes() {
-  const [contentIdeas, setContentIdeas] = useState([
-    {
-      id: "01",
-      title: "Hello",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "false",
-      isArchived: false,
-    },
-    {
-      id: "02",
-      title: "Hello",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "false",
-      isArchived: true,
-    },
-    {
-      id: "03cxa",
-      title: "Hello",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "false",
-      isArchived: true,
-    },
-  ]);
-
+export default function Notes({ contentIdeas, setContentIdeas }) {
   const onAdd = (title, content) => {
     const newIdea = {
       id: contentIdeas.length + 1,
