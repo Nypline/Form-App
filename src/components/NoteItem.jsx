@@ -4,6 +4,7 @@ export default function NoteItem({
   colorClass,
   onDelete,
   handleToggleArchive,
+  showFormationDate,
 }) {
   return (
     <div>
@@ -33,7 +34,10 @@ export default function NoteItem({
                 />
               </div>
             </div>
-            <p className="text-[6px] text-gray-500 pt-0.5">{idea.date}</p>
+            <p className="text-[6px] text-gray-500 pt-0.5">
+              {showFormationDate(idea.date)}
+            </p>
+
             <h3 className="text-[10px] font-light text-gray-900 pt-1">
               {idea.tips}
             </h3>

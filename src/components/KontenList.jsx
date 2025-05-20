@@ -1,6 +1,11 @@
 import NoteItem from "./NoteItem";
 
-const KontenList = ({ contentIdeas, onDelete, handleToggleArchive }) => {
+const KontenList = ({
+  contentIdeas,
+  onDelete,
+  handleToggleArchive,
+  showFormationDate,
+}) => {
   const activeIdeas = contentIdeas.filter((idea) => !idea.isArchived);
   const archivedIdeas = contentIdeas.filter((idea) => idea.isArchived);
 
@@ -22,6 +27,7 @@ const KontenList = ({ contentIdeas, onDelete, handleToggleArchive }) => {
                 colorClass="bg-[#0F7ECD]"
                 onDelete={onDelete}
                 handleToggleArchive={handleToggleArchive}
+                showFormationDate={showFormationDate}
               />
             ))}
           </div>
@@ -44,6 +50,7 @@ const KontenList = ({ contentIdeas, onDelete, handleToggleArchive }) => {
                 colorClass="bg-[#D9D9D9]"
                 onDelete={onDelete}
                 handleToggleArchive={handleToggleArchive}
+                showFormationDate={showFormationDate}
               />
             ))}
           </div>

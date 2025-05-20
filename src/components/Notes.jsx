@@ -6,7 +6,7 @@ export default function Notes({ contentIdeas, setContentIdeas }) {
     const newIdea = {
       id: contentIdeas.length + 1,
       title: title,
-      date: new Date(),
+      date: new Date().toISOString(),
       tips: content,
       isArchived: false,
     };
@@ -31,6 +31,17 @@ export default function Notes({ contentIdeas, setContentIdeas }) {
     });
     setContentIdeas(updatedIdeas);
   };
+  const showFormationDate = (date) => {
+    console.log(date);
+    const options = {
+      year: "numeric",
+      month: "long",
+      weekday: "long",
+      day: "numeric",
+    };
+
+    return new Date(date).toLocaleDateString("id-ID", options);
+  };
 
   return (
     <div className="flex flex-col gap-10">
@@ -39,6 +50,7 @@ export default function Notes({ contentIdeas, setContentIdeas }) {
         contentIdeas={contentIdeas}
         onDelete={handleDeleteNote}
         handleToggleArchive={handleToggleArchive}
+        showFormationDate={showFormationDate}
       ></KontenList>
     </div>
   );
