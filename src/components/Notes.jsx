@@ -6,7 +6,7 @@ export default function Notes({ contentIdeas, setContentIdeas }) {
     const newIdea = {
       id: contentIdeas.length + 1,
       title: title,
-      date: "~Selasa, 13 Mei 2025",
+      date: new Date(),
       tips: content,
       isArchived: false,
     };
