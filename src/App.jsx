@@ -1,32 +1,18 @@
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import AddNote from "./components/Notes";
-import { useState } from "react";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
-  const [contentIdeas, setContentIdeas] = useState([
-    {
-      id: "01",
-      title: "Hello",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "false",
-      isArchived: false,
-    },
-    {
-      id: "02",
-      title: "World",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "false",
-      isArchived: true,
-    },
-    {
-      id: "03cxa",
-      title: "React Note",
-      date: "~Selasa, 13 Mei 2025",
-      tips: "false",
-      isArchived: true,
-    },
-  ]);
+
+  const [contentIdeas, setContentIdeas] = useState(() => {
+    const savedNotes = localStorage.getItem("contentIdeas");
+    return savedNotes ? JSON.parse(savedNotes) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("contentIdeas", JSON.stringify(contentIdeas));
+  }, [contentIdeas]);
 
   const handleChange = (e) => {
     e.preventDefault();

@@ -20,24 +20,21 @@ export default function NoteItem({
               <div className="flex flex-row gap-2">
                 <img
                   src={img}
-                  alt=""
+                  alt="archive"
                   className="hover:cursor-pointer hover:scale-110 transition-transform duration-200"
                   onClick={() => handleToggleArchive(idea.id)}
                 />
                 <img
                   src="/Trash.svg"
-                  alt=""
+                  alt="delete"
                   className="hover:cursor-pointer hover:scale-110 transition-transform duration-200"
-                  onClick={() => {
-                    onDelete(idea.id);
-                  }}
+                  onClick={() => onDelete(idea.id)}
                 />
               </div>
             </div>
             <p className="text-[6px] text-gray-500 pt-0.5">
               {showFormationDate(idea.date)}
             </p>
-
             <h3 className="text-[10px] font-light text-gray-900 pt-1">
               {idea.tips}
             </h3>
